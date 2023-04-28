@@ -3,9 +3,10 @@ require "vendor/autoload.php";
 use App\QuestionManager;
 
 session_start();
-session_destroy();
+
 
 $manager = new QuestionManager;
+$manager->initialize();
 
 if (!isset($_SESSION['user_fullname']) || !isset($_SESSION['user_email']) || !isset($_SESSION['user_bday']) || !isset($_SESSION['user_score']) || !isset($_SESSION['answers'])) {
     echo "Quiz not completed.";
