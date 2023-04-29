@@ -34,12 +34,11 @@ try {
 </head>
 <body>
 
-    <h1>Thank You</h1>
-    <p style="color: gray">You've completed the exam.</p>
+    <h1>Thank You!</h1>
 
-    <h3>Congratulations <?php echo $_SESSION['user_fullname']; ?>! Your score is <?php echo $score; ?> out of <?php echo $manager->getQuestionSize(); ?></h3>
+    <p><b>Congratulations <?php echo $_SESSION['user_fullname'].' ('. $_SESSION['user_email']. ')'; ?> <br> Score: <?php echo "<span style='color: blue'>$score</span>"; ?> out of <?php echo $manager->getQuestionSize(). ' items'; ?></b></p>
 
-    <p> Your Answers: </p>
+    <p> Your Answers</p>
     <ol>
         <?php
         $cAnswers = $manager->getAnswers();
@@ -57,7 +56,7 @@ try {
         ?>
     </ol>
 
-    <button type="submit" onclick="window.location.href='download.php'">Download results.</button>
+    <button type="submit" onclick="window.location.href='download.php'">Download results</button>
 
 </body>
 </html>
